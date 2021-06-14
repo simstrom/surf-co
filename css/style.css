@@ -2,28 +2,219 @@
     variables 
     =============*/
 :root {
-    --main-font-color: #333333;
+  /* Colors */
+  --light-shades: #FBF6F5;
+  --light-shades-alt: #fbf6f5b0;
+  --light-accent: #36D0E1;
+  --primary: #63ABC3;
+  --dark-accent: #3EB1C9;
+  --dark-shades: #12232D;
+  --light-other: #12232d18;
+  /* Fonts */
+  --headings-font: "Shadows Into Light Two";
+  --body-font: "Poppins";
 }
-
 
 /*  =============
     global styles 
     =============*/
 body {
-    color: var(--main-font-color);
+  color: var(--dark-shades);
+  font-family: var(--body-font), sans-serif;
+  font-size: 100%;
+}
+
+main, aside, footer p {
+  width: 80%;
+  margin: 0 auto;
 }
 
 /*  =============
     typography 
     =============*/
+h1,
+h2,
+h3 {
+  font-family: var(--headings-font), cursive;
+  font-size: 3rem;
+  font-weight: bold;
+}
 
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  margin: 3rem 0 1rem;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.date {
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--dark-accent);
+  margin: 1rem 0 2rem;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+header p {
+  padding: 1rem 0 2rem;
+  font-size: 1.2rem;
+  color: var(--light-shades-alt);
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: var(--light-accent);
+}
+
+a:hover, a:focus, a:active {
+    color: var(--dark-accent);
+    text-decoration: underline;
+    outline: none;
+}
+
+nav a:link, nav a:visited {
+  color:var(--light-shades);
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+nav a:focus, nav a:hover, nav a:active {
+    color: var(--light-accent);
+    text-decoration: none;
+}
 
 /*  =============
     layout 
     =============*/
 
+header {
+  background-color: var(--dark-accent);
+  text-align: center;
+  color: var(--light-shades);
+  padding-top: 4rem;
+}
+
+nav {
+  background-color: var(--dark-shades);
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+
+nav ul li {
+    padding: 1.5rem 2.5rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+article p {
+  text-align: left;
+}
 
 /*  =============
     components 
     =============*/
 
+main img {
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+table {
+    box-shadow: 0 0 20px rgba(0,0,0,.15);
+}
+
+th {
+    background-color: var(--dark-accent);
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    padding: 1.5rem 1rem;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 1.5em 1rem;
+    border-bottom: 2px solid var(--light-other);
+}
+
+footer {
+    background-color: var(--dark-shades);
+    color: white;
+    text-align: center;
+    padding: 3rem 0 1rem;
+}
+
+footer p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    color: var(--light-shades-alt);
+}
+
+#newsletter {
+    margin-bottom: 3rem;
+}
+
+input {
+    font-family: var(--body-font);
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin: 1rem 0 .5rem;
+}
+
+input[type=text] {
+    padding: 1rem;
+    border: 2px solid transparent;
+    background-color: var(--light-other);
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+input[type=text]:focus, input[type=text]:hover {
+    border: 2px solid var(--dark-accent);
+    outline: none;
+}
+
+input[type=submit] {
+    width: 10rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: .5rem 0;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--dark-accent);
+    color: var(--light-shades);
+    transition: all 0.3s;
+}
+
+input[type=submit]:focus, input[type=submit]:hover, input[type=submit]:active {
+    background-color: var(--light-accent);
+    transform: scale(1.1);
+    cursor: pointer;
+}
