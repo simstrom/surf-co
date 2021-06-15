@@ -26,6 +26,7 @@ body {
 
 main, aside, footer p {
   width: 80%;
+  max-width: 980px;
   margin: 0 auto;
 }
 
@@ -42,6 +43,7 @@ h3 {
 
 h1 {
   font-size: 3.5rem;
+  padding: 0 2rem;
 }
 
 h2 {
@@ -59,7 +61,7 @@ h3 {
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--dark-accent);
+  color: var(--primary);
   margin: 1rem 0 2rem;
 }
 
@@ -101,7 +103,7 @@ nav a:focus, nav a:hover, nav a:active {
     =============*/
 
 header {
-  background-color: var(--dark-accent);
+  background-color: var(--primary);
   text-align: center;
   color: var(--light-shades);
   padding-top: 4rem;
@@ -109,25 +111,23 @@ header {
 
 nav {
   background-color: var(--dark-shades);
+  margin-bottom: 3rem;
 }
 
 nav ul {
   display: flex;
   list-style-type: none;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav ul li {
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 2.6rem;
 }
 
 section {
   display: flex;
   flex-direction: column;
-}
-
-article p {
-  text-align: left;
 }
 
 /*  =============
@@ -138,14 +138,16 @@ main img {
   border-radius: 5px;
   margin-bottom: 2rem;
   width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 table {
-    box-shadow: 0 0 20px rgba(0,0,0,.15);
+    box-shadow: 0 0 30px rgba(0,0,0,.3);
 }
 
 th {
-    background-color: var(--dark-accent);
+    background-color: var(--primary);
     color: white;
     text-align: left;
     font-weight: bold;
@@ -159,7 +161,7 @@ td {
 }
 
 footer {
-    background-color: var(--dark-shades);
+    background-color:#0c1c25;
     color: white;
     text-align: center;
     padding: 3rem 0 1rem;
@@ -172,7 +174,10 @@ footer p {
 }
 
 #newsletter {
-    margin-bottom: 3rem;
+    padding: .5rem 10% 4rem;
+    margin-top: 3.5rem;
+    background-color: var(--dark-shades);
+    color: var(--light-shades);
 }
 
 input {
@@ -180,7 +185,6 @@ input {
 }
 
 form label {
-    font-weight: bold;
     display: block;
     margin: 1rem 0 .5rem;
 }
@@ -188,10 +192,11 @@ form label {
 input[type=text] {
     padding: 1rem;
     border: 2px solid transparent;
-    background-color: var(--light-other);
+    background-color: #fbf6f510;
+    color: var(--light-shades);
     border-radius: 10px;
     font-size: 1rem;
-    width: 100%;
+    width: 90%;
     transition: all 0.3s;
 }
 
@@ -215,6 +220,70 @@ input[type=submit] {
 
 input[type=submit]:focus, input[type=submit]:hover, input[type=submit]:active {
     background-color: var(--light-accent);
-    transform: scale(1.1);
     cursor: pointer;
 }
+
+/*  =============
+    desktop 
+    =============*/
+    @media screen and (min-width: 830px) {
+      main img {
+        width: fit-content;
+        float: left;
+        margin-right: 2rem;
+      }
+
+      article:nth-child(even) img {
+        float: right;
+        margin-right: 0;
+        margin-left: 2rem;
+      }
+
+      #story {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+      }
+
+     #story h2 {
+       align-self: center;
+       margin-right: auto;
+     }
+    }
+
+    @media screen and (min-width: 1000px) {
+
+      #newsletter {
+        margin-bottom: 3.5rem;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(0,0,0,.3);
+        padding: .5rem 3rem 4rem;
+      }
+
+    #newsletter form ul:first-child {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      gap: 1rem 2rem;
+    }
+
+    #newsletter h3 {
+      margin-top: 0;
+    }
+
+    #newsletter form ul:nth-child(2) {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #newsletter form ul li:nth-child(4) {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      
+    }
+
+    input[type=submit] {
+      width: 100%;
+    }
+  }
