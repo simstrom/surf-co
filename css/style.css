@@ -59,12 +59,12 @@ h3 {
 }
 
 .date {
+  color: var(--primary);
   font-family: var(--body-font);
   font-weight: 600;
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary);
   margin: 1rem 0 2rem;
 }
 
@@ -74,8 +74,14 @@ p {
 }
 
 header p {
-  padding-top: 1rem;
+  color: var(--light-shades-alt);
   font-size: 1.2rem;
+  padding-top: 1rem;
+}
+
+footer p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
   color: var(--light-shades-alt);
 }
 
@@ -130,7 +136,6 @@ header {
 
 nav {
   background-color: var(--dark-shades);
-  margin-bottom: 3rem;
 }
 
 nav ul {
@@ -144,15 +149,6 @@ nav ul li {
   padding: 1.5rem 2.5rem;
 }
 
-/* section {
-  display: flex;
-  flex-direction: column;
-} */
-
-/*  =============
-    components 
-    =============*/
-
 main img {
   border-radius: 5px;
   margin-bottom: 2rem;
@@ -160,6 +156,24 @@ main img {
   height: 300px;
   object-fit: cover;
 }
+
+#newsletter {
+  padding: 0.5rem 10% 4rem;
+  margin-top: 3.5rem;
+  background-color: var(--dark-shades);
+  color: var(--light-shades);
+}
+
+footer {
+  background-color: #0c1c25;
+  color: white;
+  text-align: center;
+  padding: 3rem 0 1rem;
+}
+
+/*  =============
+    components 
+    =============*/
 
 table {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
@@ -185,28 +199,9 @@ tr {
   transition: all 0.3s;
 }
 
+/* Table hover effect, except tr with th */
 tr:not(:first-child):hover {
   color: var(--primary);
-}
-
-footer {
-  background-color: #0c1c25;
-  color: white;
-  text-align: center;
-  padding: 3rem 0 1rem;
-}
-
-footer p {
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-  color: var(--light-shades-alt);
-}
-
-#newsletter {
-  padding: 0.5rem 10% 4rem;
-  margin-top: 3.5rem;
-  background-color: var(--dark-shades);
-  color: var(--light-shades);
 }
 
 input {
@@ -269,14 +264,15 @@ input[type="submit"]:active {
     margin-bottom: 2rem;
   }
 
+  /* Floats every other images in articles in the opposite direction */
   article:nth-child(even) img, #story img {
     float: right;
     margin-right: 0;
     margin-left: 2rem;
   }
 
+  /* Adds border between articles to separate content */
   article:not(:first-child) h2 {
-    clear: both;
     padding-top: 3rem;
     margin-top: 0;
     border-top: 2px solid var(--light-other);
@@ -291,6 +287,7 @@ input[type="submit"]:active {
     padding: 4rem 3rem;
   }
 
+  /* Avoids that ul with radio buttons displays as its own grid */
   #newsletter form ul:first-child {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -302,11 +299,13 @@ input[type="submit"]:active {
     margin-top: 0;
   }
 
+  /* Displays radio buttons in a row instead of a column */
   #newsletter form ul:nth-child(2) {
     display: flex;
     justify-content: space-around;
   }
 
+  /* Sets grid-area for submit button to full width */
   #newsletter form ul li:nth-child(4) {
     grid-column: 1 / -1;
     grid-row: 2;
